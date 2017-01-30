@@ -15,6 +15,11 @@ app.use(cookieParser());
 
 // Run the server through the public folder, if necessary.
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/jquery', express.static('node_modules/jquery/dist'));
+app.use('/bootstrap', express.static('node_modules/bootstrap/dist'));
+app.use('/angular', express.static('node_modules/angular'));
+app.use('/angular-ui-router', express.static('node_modules/angular-ui-router/release'));
+app.use('/font-awesome', express.static('node_modules/font-awesome'));
 
 // Run the server through the .env configurations on the server.
 require('dotenv').config();
