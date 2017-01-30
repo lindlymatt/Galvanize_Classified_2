@@ -1,0 +1,22 @@
+<h1 style="margin-top: 2%;">Edit a Classified Ad on Galvanize Classifieds</h1>
+<hr />
+<form ng-submit="$ctrl.editPost()">
+  <div class="form-group">
+    <label for="postTitleLabel">Title</label>
+    <input type="text" class="form-control" ng-model="$ctrl.post.title" id="postTitleLabel" placeholder="Enter a New Title...">
+    <small id="emailHelp" class="form-text text-muted">Please use a descriptive title of your item.</small>
+  </div>
+  <div class="form-group">
+    <label for="postPriceLabel">Price</label>
+    <input type="num" class="form-control" ng-model="$ctrl.post.price" id="postPriceLabel" placeholder="Enter a Numeric Price...">
+  </div>
+  <div class="form-group">
+    <label for="postImageLabel">Item Image URL</label>
+    <input type="text" class="form-control" ng-model="$ctrl.post.item_image" id="postImageLabel" placeholder="Enter an Image URL...">
+  </div>
+  <div class="form-group">
+    <label for="postDescriptionLabel">Item Description</label>
+    <input type="text" class="form-control" ng-model="$ctrl.post.description" id="postDescriptionLabel" placeholder="Enter a Valid Item Description...">
+  </div>
+  <button type="submit" class="btn btn-success">Confirm Edit</button>
+</form>

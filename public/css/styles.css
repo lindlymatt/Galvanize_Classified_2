@@ -31,10 +31,11 @@ a:hover {
 /* Posts Styling */
 
 .item-image {
-  width: 150px;
-  height: 150px;
+  margin: 10px;
+  margin-left: 0;
+  width: 100px;
+  height: 100px;
   display: inline-block;
-  margin-right: 35px;
 }
 
 .item-price {
@@ -46,4 +47,8 @@ a:hover {
 }
 
 
-/* Footer Styling */
+/* Header Styling */
+
+.nav-link {
+  cursor: pointer;
+}

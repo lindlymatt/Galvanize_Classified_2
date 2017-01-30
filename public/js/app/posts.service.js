@@ -23,5 +23,9 @@
       this.editPost = function ($http, editedPost) {
         return $http.patch(`/classifieds/${editedPost.id}`, editedPost);
       }
+
+      this.deletePost = function ($http, id) {
+        return $http.delete(`/classifieds/${id}`);
+      }
     });
 }());

@@ -20,18 +20,18 @@
         url: '/',
         component: 'home'
       })
-    // .state({
-    //   name: 'new',
-    //   parent: 'app',
-    //   url: '/new',
-    //   component: 'new'
-    // })
-    // .state({
-    //   name: 'edit',
-    //   parent: 'app',
-    //   url: '/{postId}/edit',
-    //   component: 'edit'
-    // })
+      .state({
+        name: 'new',
+        parent: 'app',
+        url: '/new',
+        component: 'new'
+      })
+      .state({
+        name: 'edit',
+        parent: 'app',
+        url: '/{postId}/edit',
+        component: 'edit'
+      })
     // .state({
     //   name: 'single',
     //   parent: 'app',

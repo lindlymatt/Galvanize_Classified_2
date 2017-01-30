@@ -1,15 +1,15 @@
-<h1>All Current Classifieds</h1>
+<h1 style="margin-top: 2%;">All Current Classifieds</h1>
 <hr>
-<div ng-repeat="post in $ctrl.posts" class="item-card card card-outline-primary mb-3 text-left">
+<br />
+<div ng-repeat="post in $ctrl.posts | orderBy: 'id' | filter: q as results" class="item-card card card-outline-primary mb-3 text-left">
   <div class="card-block">
-    <h2 class="text-left">{{post.title}}</h2>
+    <h2 class="text-left">{{post.title}} | ${{post.price}}</h2>
     <span class="price-and-image">
       <img class="card-img-left item-image" src="{{post.item_image}}" alt="Card image cap">
-      <h2 class="item-price">${{post.price}}</h2>
     </span>
     <blockquote class="card-blockquote">
       <p>{{post.description}}</p>
-      <p class="card-text"><small class="text-muted">Last updated {{post.created_at | amDateFormat:'HH:mm:ss'}}...</small></p>
+      <p class="card-text"><button style="margin-right: 15px;" class="btn btn-success" ui-sref="edit({postId: post.id})">EDIT</button><button style="margin-right: 15px;" class="btn btn-danger" ng-click="$ctrl.deletePost(post.id)">DELETE</button><small class="text-muted">Last updated {{post.created_at | amDateFormat:'HH/mm/ss'}}...</small></p>
     </blockquote>
   </div>
 </div>
