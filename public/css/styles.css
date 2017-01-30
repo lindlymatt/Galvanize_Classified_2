@@ -1,0 +1,49 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  position: relative;
+  min-height: 100%;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Quicksand', sans-serif;
+}
+
+h3 {
+  font-weight: bold;
+}
+
+h5, h6, p {
+  font-family: 'Open Sans', sans-serif;
+}
+
+ul {
+  padding: 0;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+
+/* Posts Styling */
+
+.item-image {
+  width: 150px;
+  height: 150px;
+  display: inline-block;
+  margin-right: 35px;
+}
+
+.item-price {
+  display: inline-block;
+}
+
+.item-card {
+  margin-bottom: 5%;
+}
+
+
+/* Footer Styling */

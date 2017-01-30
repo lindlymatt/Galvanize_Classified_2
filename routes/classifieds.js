@@ -9,7 +9,6 @@ router.get('/', (req, res, next) => {
   knex('classifieds')
     .then(results => {
       for (let i = 0; i < results.length; i++) {
-        delete results[i].created_at;
         delete results[i].updated_at;
       }
       res.status(200).send(results);
@@ -28,7 +27,6 @@ router.get('/:id', (req, res, next) => {
       if (!result) {
         return res.status(404).send('Not found!');
       }
-      delete result.created_at;
       delete result.updated_at;
       res.status(200).send(result);
     })
@@ -42,7 +40,7 @@ router.post('/', (req, res, next) => {
   const newClassified = { title, description, price, item_image };
 
   knex('classifieds')
-    .insert(newClassified, ['id', 'title', 'description', 'price', 'item_image'])
+    .insert(newClassified, ['id', 'title', 'description', 'price', 'item_image', 'created_at'])
     .then(result => {
       res.status(200).send(result[0]);
     })
@@ -58,7 +56,7 @@ router.patch('/:id', (req, res, next) => {
 
   knex('classifieds')
     .where('classifieds.id', id)
-    .update(changedClassified, ['id', 'title', 'description', 'price', 'item_image'])
+    .update(changedClassified, ['id', 'title', 'description', 'price', 'item_image', 'created_at'])
     .then(result => {
       res.status(200).send(result[0]);
     })
@@ -72,7 +70,7 @@ router.delete('/:id', (req, res, next) => {
 
   knex('classifieds')
     .where('classifieds.id', id)
-    .del(['id', 'title', 'description', 'price', 'item_image'])
+    .del(['id', 'title', 'description', 'price', 'item_image', 'created_at'])
     .then(result => {
       res.status(200).send(result[0]);
     })

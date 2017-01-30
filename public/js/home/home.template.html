@@ -1,0 +1,15 @@
+<h1>All Current Classifieds</h1>
+<hr>
+<div ng-repeat="post in $ctrl.posts" class="item-card card card-outline-primary mb-3 text-left">
+  <div class="card-block">
+    <h2 class="text-left">{{post.title}}</h2>
+    <span class="price-and-image">
+      <img class="card-img-left item-image" src="{{post.item_image}}" alt="Card image cap">
+      <h2 class="item-price">${{post.price}}</h2>
+    </span>
+    <blockquote class="card-blockquote">
+      <p>{{post.description}}</p>
+      <p class="card-text"><small class="text-muted">Last updated {{post.created_at | amDateFormat:'HH:mm:ss'}}...</small></p>
+    </blockquote>
+  </div>
+</div>

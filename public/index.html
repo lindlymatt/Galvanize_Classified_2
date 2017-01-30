@@ -1,35 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app">
 
 <head>
   <meta charset="utf-8">
-  <title></title>
-  <base href="/">
+  <title>Galvanize Classifieds</title>
+  <!-- Style Sheets -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Quicksand:400,500,700" rel="stylesheet">
   <!-- jQuery -->
   <script src="jquery/jquery.min.js"></script>
   <!-- Angular -->
-  <script src="angular/angular.js"></script>
-  <script src="angular-ui-router/angular-ui-router.js"></script>
+  <script src="angular/angular.js" defer></script>
+  <script src="angular-ui-router/angular-ui-router.js" defer></script>
   <!-- Moment & Angular Moment -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js" defer>
   </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js" defer>
   </script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js" defer></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/angular-moment/0.9.0/angular-moment.min.js" defer></script>
   <!-- Bootstrap -->
-  <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.4.0.js"></script>
+  <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.4.0.js" defer></script>
   <script src="bootstrap/js/bootstrap.min.js" defer></script>
   <!-- Custom App Scripts -->
   <script type="text/javascript" src="js/app/app.module.js" defer></script>
   <script type="text/javascript" src="js/app/app.config.js" defer></script>
-  <!-- Style Sheets -->
-  <link rel="stylesheet" href="css/styles.css">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Quicksand:400,500,700" rel="stylesheet">
+  <script type="text/javascript" src="js/app/app.component.js" defer></script>
+  <script type="text/javascript" src="js/app/posts.service.js" defer></script>
+  <script type="text/javascript" src="js/home/home.component.js" defer></script>
+  <!-- Base for UI-Router -->
+  <base href="/">
 </head>
 
 <body>
-
+  <ui-view></ui-view>
 </body>
 
 </html>
