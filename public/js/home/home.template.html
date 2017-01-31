@@ -1,10 +1,10 @@
 <h1 style="margin-top: 2%;">All Current Classifieds</h1>
 <ul class="nav nav-pills">
-  <div class="dropdown" ng-init="sort='created_at'; actionSort='Posting Date'">
+  <div class="dropdown" ng-init="sort='-created_at'; actionSort='Posting Date'">
     <h6 style="display: inline-block;">Sort By: </h3>
     <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">{{actionSort}}</button>
     <div class="dropdown-menu">
-      <a class="dropdown-item" ng-click="sort='created_at'; actionSort='Posting Date';">Posting Date</a>
+      <a class="dropdown-item" ng-click="sort='-created_at'; actionSort='Posting Date';">Posting Date</a>
       <a class="dropdown-item" ng-click="sort='title'; actionSort='Title';">Title</a>
       <a class="dropdown-item" ng-click="sort='price'; actionSort='Price';">Price</a>
     </div>
