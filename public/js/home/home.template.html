@@ -1,7 +1,35 @@
 <h1 style="margin-top: 2%;">All Current Classifieds</h1>
+<ul class="nav nav-pills">
+  <div class="dropdown" ng-init="sort='created_at'; actionSort='Posting Date'">
+    <h6 style="display: inline-block;">Sort By: </h3>
+    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">{{actionSort}}</button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" ng-click="sort='created_at'; actionSort='Posting Date';">Posting Date</a>
+      <a class="dropdown-item" ng-click="sort='title'; actionSort='Title';">Title</a>
+      <a class="dropdown-item" ng-click="sort='price'; actionSort='Price';">Price</a>
+    </div>
+  </div>
+  <form class="form-inline my-2 my-lg-0 ml-auto">
+    <input type="search" class="form-control input-sm search-form" placeholder="Search..." ng-model="search" />
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+  <!-- <ul class="nav nav-pills">
+    <li role="presentation" class="active">
+      <input type="search" class="form-control input-sm search-form" placeholder="Filter" ng-model="search">
+    </li>
+    <li class="dropdown" ng-init="sort='-vote_count'; sortName='Votes'">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sort By {{sortName}}<span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li><a ng-click="sort='-vote_count'; sortName='Votes';">Votes</a></li>
+        <li><a ng-click="sort='created_at'; sortName='Date';">Date</a></li>
+        <li><a ng-click="sort='title'; sortName='Title'">Title</a></li>
+      </ul>
+    </li>
+  </ul> -->
+</ul>
 <hr>
 <br />
-<div ng-repeat="post in $ctrl.posts | orderBy: 'id' | filter: q as results" class="item-card card card-outline-primary mb-3 text-left">
+<div ng-repeat="post in $ctrl.posts | filter:search | orderBy:sort" class="item-card card card-outline-primary mb-3 text-left">
   <div class="card-block">
     <h2 class="text-left">{{post.title}} | ${{post.price}}</h2>
     <span class="price-and-image">
@@ -9,7 +37,7 @@
     </span>
     <blockquote class="card-blockquote">
       <p>{{post.description}}</p>
-      <p class="card-text"><button style="margin-right: 15px;" class="btn btn-success" ui-sref="edit({postId: post.id})">EDIT</button><button style="margin-right: 15px;" class="btn btn-danger" ng-click="$ctrl.deletePost(post.id)">DELETE</button><small class="text-muted">Last updated {{post.created_at | amDateFormat:'HH/mm/ss'}}...</small></p>
+      <p class="card-text"><button style="margin-right: 15px;" class="btn btn-success" ui-sref="edit({postId: post.id})">EDIT</button><button style="margin-right: 15px;" class="btn btn-danger" ng-click="$ctrl.deletePost(post.id)">DELETE</button><small class="text-muted"><time am-time-ago="post.created_at"></time>...</small></p>
     </blockquote>
   </div>
 </div>
